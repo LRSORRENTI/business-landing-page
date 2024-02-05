@@ -27,3 +27,5 @@ const inforCards: InfoCard[] = [
         id: 3
     },
 ];
+
+export default inforCards;
