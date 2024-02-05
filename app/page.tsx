@@ -5,6 +5,8 @@ import Image from "next/image";
 import InfoCards from "./libs/InfoCards";
 import { CheckCheck, LucideIcon } from "lucide-react";
 import { ReactElement } from "react";
+import PricingCards from "./libs/PricingCards";
+import pricingCards from "./libs/PricingCards";
 
 
 interface IInfoCardProps {
@@ -32,43 +34,39 @@ function InfoCard({title, Icon, children}: IInfoCardProps){
 }
 
 interface IPricingCardProps {
-  title: string;
-  price: number;
-  benefits: string[];
-  oneliner: string;
+  title:string;
+  price:number;
+  benefits:string[]
+  oneliner:string;
 }
 
-function PricingCard({title, price, benefits,oneliner}: IPricingCardProps) {
-    return (
-        <div className="h-fit w-full flex flex-col p-8 gap-8 bg-gray-900 rounded bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20">
-            <div className="flex flex-col gap-2">
-                <div>
-                <h6 className="text-2xl">
-                {title}
-                </h6>
-                <p className="text-sm text-zinc-500">
-                  {oneliner}
-                </p>
-                </div>
-            <p className="text-4xl font-bold">
-              ${price} <span className="text-sm font-normal text-zinc-500">/ Month</span>
-            </p>
-            </div>
-            <button className="bg-fuchsia-700 rounded p-2 text-sm transition-colors hover:bg-fuchsia-800 ">Try 7 Days Free!</button>
-            <div className="flex flex-col w-full gap-4">
-              {benefits.map((benefit, i) => {
-                  return (
-                    <p key={i} className="text-sm text-zinc-500 flex items-center gap-2">
-                      <span>
-                        <CheckCheck/>
-                      </span>
-                      {benefit}
-                    </p>
-                  )
-              })}
-            </div>
+function PricingCard({title,price,benefits,oneliner}:IPricingCardProps) {
+  return (
+    <div className='h-fit w-full flex flex-col p-8 gap-8 bg-gray-900 rounded bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20'>
+      <div className='flex flex-col gap-2'>
+        <div>
+          <h6 className='text-2xl'>{title}</h6>
+          <p className='text-sm text-zinc-500'>{oneliner}</p>
         </div>
-    )
+        <p className='text-4xl font-bold'>
+          ${price} <span className='text-sm font-normal text-zinc-500'>/ Month</span>
+        </p>
+      </div>
+      <button className='bg-fuchsia-700 rounded p-2 text-sm transition-colors hover:bg-fuchsia-800'>Try 7 days free!</button>
+      <div className='flex flex-col w-full gap-4'>
+        {benefits.map((benefit, i) => {
+          return(
+            <p key={i} className='text-sm text-zinc-500 flex items-center gap-2'>
+              <span>
+                <CheckCheck />
+              </span>
+              {benefit}
+            </p>
+          )
+        })}
+      </div>
+    </div>
+  )
 }
 
 export default function Home() {
@@ -115,13 +113,15 @@ export default function Home() {
         </div>
       </section>
       <section id="pricing" className="h-fit min-h-screen w-full flex flex-col items-center justify-center gap-8 p-8">
-          <h4 className="text-4xl md:text-5xl font-bold ">
-            Pricing
-          </h4>
-          <div className="grid grid-col-1 grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 items-center h-fit w-full max-w-3xl gap-8">
-
-          </div>
-      </section>
+        <h4 className="text-4xl md:text-5xl font-bold">Pricing</h4>
+        <div className='grid grid-cols-1 grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 items-center h-fit w-full max-w-3xl gap-8'>
+            {pricingCards.map((pricingCard) => {
+              return (
+                <PricingCard oneliner={pricingCard.oneliner} title={pricingCard.title} price={pricingCard.price} benefits={pricingCard.benefits} key={pricingCard.id}/>
+              )
+            })}
+        </div>
+</section>
     </main>
   );
 }
