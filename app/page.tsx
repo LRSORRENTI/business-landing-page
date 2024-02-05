@@ -31,6 +31,18 @@ function InfoCard({title, Icon, children}: IInfoCardProps){
     )
 }
 
+interface IPricingCardProps {
+  title: string;
+  price: number;
+  benefits: string[];
+  oneliner: string;
+}
+
+function PricingCard({title, price, benefits,oneliner}: IPricingCardProps) {
+    return (
+        
+    )
+}
 
 export default function Home() {
   return (
@@ -74,7 +86,15 @@ export default function Home() {
             })}
           </div>
         </div>
-</section>
+      </section>
+      <section id="pricing" className="h-fit min-h-screen w-full flex flex-col items-center justify-center gap-8 p-8">
+          <h4 className="text-4xl md:text-5xl font-bold ">
+            Pricing
+          </h4>
+          <div className="grid grid-col-1 grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 items-center h-fit w-full max-w-3xl gap-8">
+
+          </div>
+      </section>
     </main>
   );
 }
