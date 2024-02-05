@@ -5,7 +5,7 @@ interface IPricingCard {
     id: number;
     oneliner: string;
 }
-const pricingCards: IPricingCard[] = [
+const PricingCards: IPricingCard[] = [
     {
         price: 49,
         title: "Insightful Pro",
@@ -32,4 +32,4 @@ const pricingCards: IPricingCard[] = [
     },
 ];
 
-export default pricingCards;
+export default PricingCards;

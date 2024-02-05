@@ -1,13 +1,13 @@
 import { AlarmClock, AlarmClockOff, ArrowDownNarrowWide, ArrowUpNarrowWide, LucideIcon  } from "lucide-react";
 
-interface InfoCard {
+interface IInfoCard {
     title: string;
     icon: LucideIcon;
     bodyText: string;
     id: number;
 }
 
-const infoCards: InfoCard[] = [
+const InfoCards: IInfoCard[] = [
     {
         title: "Increased Sales",
         bodyText: "Insightful's predictive analysis identify high-valye prospects for targeted pitches, boosting conversion rates and sales up to 20%.",
@@ -28,4 +28,4 @@ const infoCards: InfoCard[] = [
     },
 ];
 
-export default infoCards;
+export default InfoCards;
