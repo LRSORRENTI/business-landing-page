@@ -21,13 +21,16 @@ export default function Home() {
               </p>
               <div className="w-full flex items-center justify-center md:justify-start gap-4">
                 <button className="w-48 h-12 text-sm sm:text-base rounded bg-white text-black hover:bg-fuchsia-700 hover:text-white transition-colors">Try 7 days free</button>
-                <button className="w-48 h-12 text-sm sm:text-base rounded hover:bg-white hover:text-white hover:opacity-5 transition-colors">Contact</button>
+                <button className='w-48 h-12 text-sm sm:text-base rounded bg-white text-black hover:bg-fuchsia-700 hover:text-white transition-colors'>Contact</button>
               </div>
             </div>
             <div className='w-full h-2/4 md:h-full md:w-3/5 flex items-center justify-center relative -z-10'>
           <Spline className="w-full flex scale-[.25] sm:scale-[.35] lg:scale-[.5] items-center justify-center md:justify-start" scene='https://prod.spline.design/pvM5sSiYV2ivWraz/scene.splinecode'/>
         </div>
       </header>
+      <section id="about" className="h-fit min-h-screen w-full flex relative items-center justify-center">
+
+      </section>
     </main>
   );
 }
