@@ -2,6 +2,27 @@
 import Spline from "@splinetool/react-spline";
 import Navbar from "./components/Navbar";
 import Image from "next/image";
+import infoCards from "./libs/infoCards";
+import { LucideIcon } from "lucide-react";
+import { ReactElement } from "react";
+import { AnyMxRecord } from "dns";
+
+interface IInfoCardProps {
+  title: string;
+  Icon: LucideIcon;
+  children: ReactElement<any, any>
+}
+
+function infoCard({title, Icon, children}: IInfoCardProps){
+    return (
+      <div className="w-full h-80 rounded flex flex-col justify-around items-center p-8 bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 ">
+        <div className="p-4 bg-fuchsia-700 rounded-full">
+          <Icon/>
+        </div>
+      </div>
+    )
+}
+
 
 export default function Home() {
   return (
@@ -35,6 +56,13 @@ export default function Home() {
         </div>
         <div className="w-full h-full flex items-center justify-center flex-col gap-8 max-w-7xl">
           <h3 className="text-4xl md:text-5xl font-bold">No More Time Wasted</h3>
+          <div className="w-full grid grid-cols-1 grid-rows-3 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1 gap-4 justify-between relative">
+            {infoCards.map((infoCard) => {
+                return {
+                  
+                }
+            })}
+          </div>
         </div>
       </section>
     </main>

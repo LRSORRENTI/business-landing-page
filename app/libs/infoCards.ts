@@ -7,7 +7,7 @@ interface InfoCard {
     id: number;
 }
 
-const inforCards: InfoCard[] = [
+const infoCards: InfoCard[] = [
     {
         title: "Increased Sales",
         bodyText: "Insightful's predictive analysis identify high-valye prospects for targeted pitches, boosting conversion rates and sales up to 20%.",
@@ -28,4 +28,4 @@ const inforCards: InfoCard[] = [
     },
 ];
 
-export default inforCards;
+export default infoCards;
