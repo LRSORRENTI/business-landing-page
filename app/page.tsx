@@ -1,6 +1,7 @@
 "use client"
 import Spline from "@splinetool/react-spline";
 import Navbar from "./components/Navbar";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -28,8 +29,13 @@ export default function Home() {
           <Spline className="w-full flex scale-[.25] sm:scale-[.35] lg:scale-[.5] items-center justify-center md:justify-start" scene='https://prod.spline.design/pvM5sSiYV2ivWraz/scene.splinecode'/>
         </div>
       </header>
-      <section id="about" className="h-fit min-h-screen w-full flex relative items-center justify-center">
-
+      <section id="about" className="h-fit min-h-screen w-full flex relative items-center justify-center p-8">
+        <div className="absolute -z-10 h-full overflow-hidden">
+          <Image src="business-landing-page/public/vercel.svg" alt={"A Nice Image Of Vercel Logo"} fill className="absolute object-cover w-full overflow-visible sm:rotate-90"/>
+        </div>
+        <div className="w-full h-full flex items-center justify-center flex-col gap-8 max-w-7xl">
+          <h3 className="text-4xl md:text-5xl font-bold">No More Time Wasted</h3>
+        </div>
       </section>
     </main>
   );
