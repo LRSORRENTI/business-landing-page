@@ -20,21 +20,19 @@ const pricingCards:IPricingCard[] = [
         id: 1,
         oneliner: "Empower your business with automated intelligence for sustainable growth"
     },
-    
     {
-        price: 129,
-        title: "VisionAI Transformation",
+        price: 119,
+        title: "VisionAI Pro",
         benefits: [
-            "Everything in Growth Tier, plus:",
-            "Enterprise-scale digital transformation",
-            "Bespoke intelligent automation solutions",
+            "Everything included in Growth tier",
+            "Enterprise digital transformation",
+            "Bespoke AI solutions",
             "Predictive market trend analysis",
-            "Dedicated support and strategy consulting",
+            "Dedicated support and strategy solutions"
         ],
-        id: 2,
+        id: 1,
         oneliner: "Transformative AI solutions for leading-edge business innovation and scalability"
-    }
-    
+    },
 ]
 
 export default pricingCards

@@ -15,7 +15,7 @@ const infoCards: IInfoCard[] = [
         id: 1
     },
     {
-        title: "Intelligent Automation",
+        title: "Intelligent Automation Solutions",
         bodyText: "With VisionAI, automate complex processes and workflows, empowering your team to focus on strategic tasks and innovation, while AI handles the routine with precision.",
         icon: AlarmClockOff,
         id: 2

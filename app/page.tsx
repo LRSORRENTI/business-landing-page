@@ -2,6 +2,8 @@
 import Spline from "@splinetool/react-spline";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
+import TestObserver from "./components/TestObserver";
+
 import Image from "next/image";
 import InfoCards from "./libs/InfoCards";
 import { CheckCheck, LucideIcon } from "lucide-react";
@@ -73,7 +75,8 @@ export default function Home() {
   return (
     <main className="flex min-h-screen h-fit flex-col items-center justify-center relative">
       <Navbar/>
-      <Header/>
+      {/* <Header/> */}
+      {/* <TestObserver/> */}
       <section id="about" className="h-fit min-h-screen w-full flex relative items-center justify-center p-8">
         <div className='absolute -z-10 h-full w-full overflow-hidden'>
           <Image src="/whirl.svg" fill className="absolute object-cover w-full overflow-visible sm:rotate-90" alt="Background Whirl"/>
@@ -84,7 +87,7 @@ export default function Home() {
             {InfoCards.map((infoCard) => {
               return (
                 <InfoCard key={infoCard.id} Icon={infoCard.icon} title={infoCard.title}>
-                  <p className="text-sm sm:text-base text-center md:text-left">{infoCard.bodyText}</p>
+                  <p className="text-sm sm:text-base text-left">{infoCard.bodyText}</p>
                 </InfoCard>
               )
             })}
@@ -93,7 +96,7 @@ export default function Home() {
       </section>
       <section id="pricing" className="h-fit min-h-screen w-full flex flex-col items-center justify-center gap-8 p-8">
         <h4 className="text-4xl md:text-5xl font-bold">Pricing</h4>
-        <div className='grid grid-cols-1 grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 items-center h-fit w-full max-w-3xl gap-8'>
+        <div className='grid grid-cols-1 grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 items-start h-fit w-full max-w-3xl gap-8'>
             {pricingCards.map((pricingCard) => {
               return (
                 <PricingCard oneliner={pricingCard.oneliner} title={pricingCard.title} price={pricingCard.price} benefits={pricingCard.benefits} key={pricingCard.id}/>
