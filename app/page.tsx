@@ -73,8 +73,6 @@ export default function Home() {
   return (
     <main className="flex min-h-screen h-fit flex-col items-center justify-center relative">
       <Navbar/>
-     {/* <h1></h1> */}
-     
       <Header/>
       <section id="about" className="h-fit min-h-screen w-full flex relative items-center justify-center p-8">
         <div className='absolute -z-10 h-full w-full overflow-hidden'>
