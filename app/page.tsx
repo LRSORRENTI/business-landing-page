@@ -8,7 +8,7 @@ import Image from "next/image";
 import { CheckCheck, LucideIcon } from "lucide-react";
 import { ReactElement } from "react";
 import pricingCards from "./libs/pricingCards";
-import infoCards from "./libs/infoCards.ts";
+import infoCards from "./libs/infoCards";
 
 interface IInfoCardProps {
   title: string;
