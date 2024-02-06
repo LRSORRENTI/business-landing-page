@@ -1,19 +1,20 @@
 interface IPricingCard {
-    price: number;
-    title: string;
-    benefits: string[];
-    id: number;
-    oneliner: string;
+    price:number;
+    title:string;
+    benefits:string[];
+    id:number;
+    oneliner:string;
 }
-const PricingCards: IPricingCard[] = [
+
+const pricingCards:IPricingCard[] = [
     {
         price: 49,
         title: "Insightful Pro",
         benefits: [
-            "Predictive load scoring",
+            "Predictive lead scoring",
             "Automated content creation",
             "Personalized messaging at scale",
-            "Customer retention tools"
+            "Customer retention tools",
         ],
         id: 1,
         oneliner: "AI-powered sales tools for focused revenue growth"
@@ -23,13 +24,13 @@ const PricingCards: IPricingCard[] = [
         title: "Insightful Enterprise",
         benefits: [
             "Everything In Pro Tier, and:",
-            "Data-Driven recommendations",
+            "Data-driven recommendations",
             "Customizable sales workflows",
-            "Real-time alerts and notifications"
+            "Real-time alerts and notifications",
         ],
         id: 2,
-        oneliner: "Comprehensive sales optimization for accelerated revenue goals"
+        oneliner: "Comprehensive sales optimization for accelerated revenue gains"
     },
-];
+]
 
-export default PricingCards;
+export default pricingCards
