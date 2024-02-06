@@ -8,29 +8,33 @@ interface IPricingCard {
 
 const pricingCards:IPricingCard[] = [
     {
-        price: 49,
-        title: "Insightful Pro",
+        price: 59,
+        title: "VisionAI Growth",
         benefits: [
-            "Predictive lead scoring",
-            "Automated content creation",
-            "Personalized messaging at scale",
-            "Customer retention tools",
+            "Automated process optimization",
+            "Real-time analytics dashboards",
+            "Custom AI-driven insights",
+            "Enhanced customer interaction tools",
+            "Intelligent automation of routine tasks"
         ],
         id: 1,
-        oneliner: "AI-powered sales tools for focused revenue growth"
+        oneliner: "Empower your business with automated intelligence for sustainable growth"
     },
+    
     {
-        price: 99,
-        title: "Insightful Enterprise",
+        price: 129,
+        title: "VisionAI Transformation",
         benefits: [
-            "Everything In Pro Tier, and:",
-            "Data-driven recommendations",
-            "Customizable sales workflows",
-            "Real-time alerts and notifications",
+            "Everything in Growth Tier, plus:",
+            "Enterprise-scale digital transformation",
+            "Bespoke intelligent automation solutions",
+            "Predictive market trend analysis",
+            "Dedicated support and strategy consulting",
         ],
         id: 2,
-        oneliner: "Comprehensive sales optimization for accelerated revenue gains"
-    },
+        oneliner: "Transformative AI solutions for leading-edge business innovation and scalability"
+    }
+    
 ]
 
 export default pricingCards
