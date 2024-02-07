@@ -1,7 +1,20 @@
 import React, { useEffect, useState, useRef, Suspense, lazy } from 'react';
 const Spline = lazy(() => import('@splinetool/react-spline'));
 
+const isMobileDevice = () => {
+  // Check based on user agent, on mobile devices the spline is not rendering
+  // render default img instead
+  const userAgent = typeof window.navigator === "undefined" ? "" : navigator.userAgent;
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+}
+
 export default function TestObserver() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Update the state based on the device type
+    setIsMobile(isMobileDevice());
+  }, []);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -31,7 +44,7 @@ export default function TestObserver() {
     <header id="home" className="flex flex-col-reverse md:flex-row w-full h-screen max-w-7xl items-center justify-cente p-8 relative">
               <div className="w-full h-2/4 md:h-full md:w-2/5 flex flex-col justify-center items-center md:items-start gap-8">
               <div className="flex flex-col gap-2">
-                <h1 className="text-4xl font-black md:text-8xl">
+                <h1 className="text-4xl font-black md:text-8xl lg:mr-2">
                    VisionAI
                 </h1>
                 <h2 className="text-md md:text-2xl">
@@ -48,14 +61,29 @@ export default function TestObserver() {
                 <button className='w-48 h-12 text-sm sm:text-base rounded bg-white text-black hover:bg-fuchsia-700 hover:text-white transition-colors'>Contact</button>
               </div>
             </div>
-
-            <div className='w-full h-2/4 md:h-full md:w-3/5 flex items-center justify-center relative -z-10' ref={ref}>
+            <div className='w-full h-2/4 md:h-full md:w-3/5 flex items-center justify-center relative -z-10'>
+      {isMobile ? (
+        // Render for mobile devices
+        <div className="w-screen">
+          <img src="/vision-ai.png" alt="Default image of VisionAI logo" />
+        </div>
+      ) : (
+        // Render for desktop
         <Suspense fallback={<div>Loading asset...</div>}>
+          <Spline className="w-full flex scale-[.25] sm:scale-[.35] lg:scale-[.5] items-center justify-center md:justify-start" scene="/atomic.spline" />
+        </Suspense>
+      )}
+    </div>
+            {/* <div className='w-full h-2/4 md:h-full md:w-3/5 flex items-center justify-center relative -z-10' ref={ref}> */}
+        {/* <Suspense fallback={<div>Loading asset...</div>}>
           {isVisible && (
             <Spline className="w-full flex scale-[.25] sm:scale-[.35] lg:scale-[.5] items-center justify-center md:justify-start" scene="/atomic.spline" />
           )}
-        </Suspense>
-      </div>
+        </Suspense> */}
+        {/* <div className="w-screen">
+          <img className="" src="/vision-ai.png" alt="Default image of VisionAI logo" />
+        </div>
+      </div> */}
     </header>
   );
 }
