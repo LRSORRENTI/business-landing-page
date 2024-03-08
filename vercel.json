@@ -1,7 +1,7 @@
 {
     "headers": [
       {
-        "source": "/public/atomic.spline",
+        "source": "/atomic.spline",
         "headers": [
           {
             "key": "Cache-Control",
